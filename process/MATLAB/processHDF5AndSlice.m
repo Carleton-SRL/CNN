@@ -9,10 +9,10 @@ close all;
 % Note as well that the data is converted to 'double' after import. This is
 % required for a lot of the processing that is done. To instead work with
 % integers, simply delete the 'double' conversion.
-tk = double(h5read('./Data/events_recording_20260127_jackW.h5', '/timestamp'));
-xk = double(h5read('./Data/events_recording_20260127_jackW.h5', '/x'));
-yk = double(h5read('./Data/events_recording_20260127_jackW.h5', '/y'));
-pk = double(h5read('./Data/events_recording_20260127_jackW.h5', '/polarity'));
+tk = double(h5read('recording_20251029_131131.h5', '/timestamp'));
+xk = double(h5read('recording_20251029_131131.h5', '/x'));
+yk = double(h5read('recording_20251029_131131.h5', '/y'));
+pk = double(h5read('recording_20251029_131131.h5', '/polarity'));
 
 % It is often convinient to convert the time into something with useful
 % units. By default, the time vector is in microseconds AND time since

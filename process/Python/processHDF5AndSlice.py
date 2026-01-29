@@ -4,7 +4,7 @@ import os
 import pyvista as pv
 
 # Import data from HDF5 file
-with h5py.File('/home/alexandercrain/Dropbox/Graduate Documents/Doctor of Philosophy/IEI-ATS/Data/events_recording_20260127_jackW.h5', 'r') as f:
+with h5py.File('recording_20251029_131131.h5', 'r') as f:
     tk = f['/timestamp'][:].astype(np.float64)
     xk = f['/x'][:].astype(np.float64)
     yk = f['/y'][:].astype(np.float64)

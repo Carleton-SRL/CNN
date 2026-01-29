@@ -15,3 +15,4 @@ The ['import'](https://github.com/Carleton-SRL/CNN/tree/main/import) folder in t
 > The code that imports the data into a MAT file is currently only useful for smaller event datasets. For larger datasets, this code can quickly crash your computer. It is generally better to use the HDF5 converter, as HDF5 is supported in both MATLAB and Python.
 
 The ['process'](https://github.com/Carleton-SRL/CNN/tree/main/process) folder contains code for importing event data into MATLAB or Python, as well as code for simple tasks like splicing out sections of the data or simple visualization tools.
+
