@@ -2,10 +2,27 @@ import dv_processing as dv
 import numpy as np
 import h5py
 import os
+import argparse
 
-# Input and output paths
-input_file = "recording_20251029_131131.aedat4"
-output_file = "recording_20251029_131131.h5"
+# Sample terminal run command
+'''
+python3 importAEDAT4toHDF5.py --input '/home/alexandercrain/Dropbox/Graduate Documents/Doctor of Philosophy/Thesis Research/Datasets/SPOT/Jack Woolridge/recording_20260127_145247.aedat4' --output '/home/alexandercrain/Dropbox/Graduate Documents/Doctor of Philosophy/Thesis Research/Datasets/SPOT/HDF5/recording_20260127_145247.hdf5'
+'''
+
+# Setup argparser
+parser = argparse.ArgumentParser(description="Convert AEDAT4 event data to HDF5.")
+parser.add_argument("-i", "--input", required=True, help="Path to input .aedat4 file")
+parser.add_argument("-o", "--output", required=True, help="Path to output .h5 file")
+
+# Parse the arguments from the command line
+args = parser.parse_args()
+
+# Assign the arguments to your variables
+input_file = args.input
+output_file = args.output
+
+print(f"Processing input: {input_file}")
+print(f"Saving output to: {output_file}")
 
 # Import the data
 reader = dv.io.MonoCameraRecording(input_file)
