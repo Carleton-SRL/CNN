@@ -1,6 +1,6 @@
 # Introduction
 
-The Collaborative Neuromorphic Nerds (or CNN for short) is a repository focused on using event cameras (or Neuromorphic cameras) for spacecraft proximity operations research. The Nerds consist of three researchers at Carleton University, one PhD Candidate and two MASc students, each focusing on different areas of research but all united in one goal: developing a robust pipeline to take event camera measurements and transform them into useful ouputs.
+NEXUS (Neuromorphic EXploration of Unknown Spacecraft) is a repository focused on using event cameras (or Neuromorphic cameras) for spacecraft proximity operations research. The team consists of three researchers at Carleton University, one PhD Candidate and two MASc students, each focusing on different areas of research but all united in one goal: developing a robust pipeline to take event camera measurements and transform them into useful ouputs.
 
 # Navigation
 
