@@ -7,7 +7,9 @@ import os
 # --- 1. Configuration ---
 
 # Path to the dataset directory. The script will find the first .aedat4 file inside.
-dataset_path = Path('/home/alexandercrain/Dropbox/Graduate Documents/Doctor of Philosophy/Thesis Research/Datasets/SPOT/Jack Woolridge')
+dataset_path = Path('/home/alexandercrain/Dropbox/Graduate Documents/Doctor of Philosophy/Thesis Research/Datasets/SPOT/AEDAT4/ROT_NOM')
+
+output_path = Path('/home/alexandercrain/Videos/Research')
 
 # Desired output frame rate for the video
 output_fps = 60.0
@@ -24,7 +26,7 @@ except StopIteration:
 
 # Create a unique output directory based on the input filename and current time
 timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-output_parent_dir = aedat4_file.parent / f"{aedat4_file.stem}_output_{timestamp}"
+output_parent_dir = output_path / f"{aedat4_file.stem}_output_{timestamp}"
 
 # Create subdirectories for the video and the individual frames
 output_video_dir = output_parent_dir / "video"
@@ -73,7 +75,7 @@ accumulator.setIgnorePolarity(True)
 
 # Create a filter chain to reduce noise
 filter_chain = dv.EventFilterChain()
-filter_chain.addFilter(dv.noise.BackgroundActivityNoiseFilter(resolution, 1.0))
+#filter_chain.addFilter(dv.noise.BackgroundActivityNoiseFilter(resolution, 1.0))
 
 # Set up the OpenCV VideoWriter to save the MP4
 video_path = output_video_dir / "edge_map.mp4"
@@ -119,7 +121,7 @@ def process_events_callback(events: dv.EventStore):
 # Initiate the event stream slicer
 slicer = dv.EventStreamSlicer()
 # Calculate slicing interval from the desired FPS
-slicing_interval = datetime.timedelta(seconds=(1.0 / output_fps))
+slicing_interval = datetime.timedelta(seconds=0.3)
 slicer.doEveryTimeInterval(slicing_interval, process_events_callback)
 
 # --- 5. Main Processing Loop ---
